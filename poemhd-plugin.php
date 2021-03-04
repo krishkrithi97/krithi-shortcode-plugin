@@ -69,18 +69,16 @@ That are so wondrous sweet and fair!";
 
 // This just echoes the chosen line, we'll position it later.
 function poemhd_plugin() {
-	$chosen = Poemhd_plugin_get_lyric();
+	$select = Poemhd_plugin_get_lyric();
 	$lang   = '';
 	if ( 'en_' !== substr( get_user_locale(), 0, 3 ) ) {
 		$lang = ' lang="en"';
 	}
 
 	printf(
-		'<p id="dolly"><span class="screen-reader-text">%s </span><span dir="ltr"%s>%s</span></p>',
-		__( 'Quote from Hello Dolly song, by Jerry Herman:' ),
 		$lang,
-		$chosen
 	);
+	retutrn $select
 }
 
 // Now we set that function up to execute when the admin_notices action is called.
